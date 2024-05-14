@@ -24,15 +24,15 @@ class FrondendController extends Controller
         $menus = Menu::all()->slice(1);
         $dropMenu = Menu::all();
         $homes = Home::all();
-        $portfolios = Portfolio::all();
-        $counterSections = CounterSection::all();
-        $counterItems = CounterItem::all();
-        $reviews = Review::all();
-        $blogs = Blog::all();
-        $contacts = Contact::all();
-        $contactLists = ContactList::all();
+        $portfolios = Portfolio::orderBy('id', 'desc')->take(6)->get();
+        $counterSections = CounterSection::orderBy('created_at', 'desc')->take(1)->get();
+        $counterItems = CounterItem::orderBy('created_at', 'desc')->take(4)->get();
+        $reviews = Review::orderBy('created_at', 'desc')->take(1)->get();
+        $blogs = Blog::orderBy('created_at', 'desc')->take(3)->get();
+        $contacts = Contact::orderBy('created_at', 'desc')->take(1)->get();
+        $contactLists = ContactList::orderBy('created_at', 'desc')->take(2)->get();
         $messages = Message::all();
-        $settings = Setting::all();
+        $settings = Setting::orderBy('created_at', 'desc')->take(1)->get();
         $langButtons = LangButton::all();
 
         return view('frondend.index', compact('menus', 'dropMenu','homes','portfolios', 'counterSections', 'counterItems','reviews','blogs','contacts','contactLists','messages','settings','langButtons'));
@@ -41,9 +41,9 @@ class FrondendController extends Controller
     {
         $menus = Menu::all()->slice(1);
         $dropMenu = Menu::all();
-        $settings = Setting::all();
-        $standalone = Standalone::all();
-        $standaloneItems = StandaloneItem::all();
+        $settings = Setting::orderBy('created_at', 'desc')->take(1)->get();
+        $standalone = Standalone::orderBy('created_at', 'desc')->take(1)->get();
+        $standaloneItems = StandaloneItem::orderBy('created_at', 'desc')->take(3)->get();
         return view('frondend.standalone', compact('menus', 'dropMenu','settings', 'standalone','standaloneItems'));
     }
 }

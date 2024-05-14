@@ -126,7 +126,7 @@
         @endforeach
         <div class="standalone-area">
             <!-- Standalone-row-1 -->
-            @foreach($standaloneItems as $index => $standaloneItem)
+            @foreach($standaloneItems->sortBy('id') as $index => $standaloneItem)
                 <div class="row standalone-row align-items-center no-gutters justify-content-between">
                     @if($index % 2 == 0)
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 order-1 wow fadeInLeft" data-wow-delay="300ms">

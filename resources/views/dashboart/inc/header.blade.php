@@ -33,7 +33,7 @@
 		<!--begin::Main-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			<a href="index.html">
+			<a href="/dashboart/adminpanel/index">
                 <p style="font-size: 15px; color:#80808F"> {{Auth::user()->name}}</p>
 			</a>
 			<!--end::Logo-->

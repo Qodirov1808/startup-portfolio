@@ -179,12 +179,15 @@
 <!-- End About -->
 
 <!-- Start Portfolio -->
+
+
 <section class="portfolio-section" id="2">
     <div class="container-fluid">
         <div class="row d-block">
+
             <div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat no-transition">
                 <!-- Item -->
-                @foreach($portfolios as $portfolio)
+                @foreach($portfolios->sortBy('id') as $portfolio)
                 <div class="cbp-item">
                     <a href="/storage/images/{{$portfolio->image}}" class="cbp-caption cbp-lightbox" data-title="{{$portfolio->data_title}}">
                         <div class="cbp-caption-defaultWrap">
@@ -205,9 +208,11 @@
                 </div>
                 @endforeach
             </div>
+
         </div>
     </div>
 </section>
+
 <!-- End Portfolio -->
 
 <!-- Start Counter -->
@@ -215,7 +220,7 @@
     <div class="container">
         <div class="row no-gutters">
             <!-- Counter-1 -->
-           @foreach($counterItems as $counterItem)
+           @foreach($counterItems->sortBy('id') as $counterItem)
                 <div class="col-lg-3 counter num_counter wow fadeInUp" data-wow-delay="400ms">
                     <i class="{{$counterItem->icon}}"></i>
                     <h5 class="timer count-title heading count-number count">{{$counterItem->count}}</h5>
@@ -224,7 +229,7 @@
            @endforeach
         </div>
         <!-- Row-2 -->
-       @foreach($counterSections as $counterSection)
+       @foreach($counterSections->sortBy('id')  as $counterSection)
             <div class="row no-gutters counter-image">
                 <div class="col-lg-12 col-md-12 col-sm-12 counter-img wow fadeInUp" data-wow-delay="400ms">
                     <img src="/storage/images/{{$counterSection->image}}" alt="img">
@@ -286,7 +291,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 " >
             <div class=" text-center blog-carousel owl-carousel owl-themes active">
                 <!-- Item-1 -->
-               @foreach($blogs as $blog)
+               @foreach($blogs->sortBy('id') as $blog)
                     <div class="item">
                         <div class="row no-gutters">
                             <div class="col-lg-6 col-md-12 col-sm-12 wow fadeInLeft" data-wow-delay="400ms">
@@ -365,7 +370,7 @@
                     <p class="text">{{$contact->description}} </p>
                 @endforeach
                 <div class="row no-gutters">
-                    @foreach($contactLists as $contactList)
+                    @foreach($contactLists->sortBy('id') as $contactList)
                         <div class="col-lg-6 col-md-12 col-sm-12" >
                             <h5>{{$contactList->city}}</h5>
                             <div class="media">

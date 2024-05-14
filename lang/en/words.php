@@ -64,4 +64,6 @@ return[
     'remember me' => 'Remember me',
     'forgot password' => 'Forgot your password?',
     'login' => 'LOG IN',
+    'new messages' => 'New Messages',
+
 ];

@@ -6,7 +6,7 @@
         <!--begin::Header-->
         <div class="card-header border-0 pt-5">
             <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bolder text-dark">Message</span>
+                <span class="card-label font-weight-bolder text-dark">{{__('words.message')}}</span>
             </h3>
             <div class="card-toolbar">
                 <ul class="nav nav-pills nav-pills-sm nav-dark-75">
@@ -32,10 +32,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach ($messages as $message)
+                    @foreach ($messages as $index => $message)
                         <tr>
                             <td>
-                                    <span >{{$message->id}}</span>
+                                    <span >{{$index + 1}}</span>
                             </td>
                             <td >
                                 <span>{{$message->name}}</span>

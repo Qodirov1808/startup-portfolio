@@ -36,7 +36,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 
 Route::get('/dashboard', function () {
-    return view('dashboart.adminpanel.index');
+    $messages = App\Models\Message::orderBy('created_at', 'desc')->get();
+    return view('dashboart.adminpanel.index', compact('messages'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

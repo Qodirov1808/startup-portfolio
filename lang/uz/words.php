@@ -62,5 +62,7 @@ return[
     'password' => 'Parol',
     'remember me' => 'Meni eslab qol',
     'forgot password' => 'Parolingiz esdan chiqdimi?',
-    'login' => 'TIZIMGA KIRISH'
+    'login' => 'TIZIMGA KIRISH',
+    'new messages' => 'Yangi xabarlar',
+
 ];

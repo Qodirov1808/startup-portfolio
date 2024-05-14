@@ -62,7 +62,9 @@ return [
     'password' => 'Пароль',
     'remember me' => 'Запомнить меня',
     'forgot password' => 'Забыли пароль?',
-    'login' => 'АВТОРИЗОВАТЬСЯ'
+    'login' => 'АВТОРИЗОВАТЬСЯ',
+    'new messages' => 'Новые сообщения',
+
 
 ];
 
